@@ -35,6 +35,15 @@ class HomeScreen extends StatelessWidget {
                 style: TextStyle(color: AppColors.primaryColor)),
             actions: [
               IconButton(
+                tooltip: 'Add Product',
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/add_product_screen');
+                },
+                icon: svgIcon("assets/icons/Edit Square.svg",
+                    color: AppColors.primaryColor),
+              ),
+              IconButton(
+                tooltip: 'Search',
                 onPressed: () {
                   Navigator.of(context).pushNamed('/search');
                 },
@@ -42,6 +51,7 @@ class HomeScreen extends StatelessWidget {
                     color: AppColors.primaryColor),
               ),
               IconButton(
+                tooltip: 'Notification',
                 onPressed: () {
                   Navigator.of(context).pushNamed('/notification');
                 },
@@ -91,34 +101,6 @@ class HomeScreen extends StatelessWidget {
                   label: "Cart",
                   tooltip: "Cart",
                 ),
-                // BottomNavigationBarItem(
-                //   backgroundColor: Colors.transparent,
-                //   icon: svgIcon("assets/icons/Category.svg",
-                //       color: AppColors.primaryColor),
-                //   label: "Discover",
-                //   tooltip: "Discover",
-                // ),
-                // BottomNavigationBarItem(
-                //   backgroundColor: Colors.transparent,
-                //   icon: svgIcon("assets/icons/Bookmark.svg",
-                //       color: AppColors.primaryColor),
-                //   label: "Bookmark",
-                //   tooltip: "Bookmark",
-                // ),
-                // BottomNavigationBarItem(
-                //   backgroundColor: Colors.transparent,
-                //   icon: svgIcon("assets/icons/Bag.svg",
-                //       color: AppColors.primaryColor),
-                //   label: "Cart",
-                //   tooltip: "Cart",
-                // ),
-                // BottomNavigationBarItem(
-                //   backgroundColor: Colors.transparent,
-                //   icon: svgIcon("assets/icons/Profile.svg",
-                //       color: AppColors.primaryColor),
-                //   label: "Profile",
-                //   tooltip: 'Profile',
-                // ),
               ],
             ),
           ),

@@ -27,12 +27,10 @@ class CartRepository {
         );
       }
 
-      // Get the most recent cart
       final Cart latestCart = CartList.fromJson(cartList)
           .carts
           .reduce((a, b) => a.date.isAfter(b.date) ? a : b);
 
-      // Get product details for each product in cart
       final List<ProductOrder> productsWithDetails = [];
       for (var product in latestCart.products) {
         try {
@@ -51,12 +49,10 @@ class CartRepository {
           }
         } catch (e) {
           print('Error fetching product ${product.productId}: $e');
-          // Continue with next product if one fails
           continue;
         }
       }
 
-      // Return cart with product details
       return Cart(
         id: latestCart.id,
         userId: latestCart.userId,

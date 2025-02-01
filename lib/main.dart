@@ -1,15 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_phoenix/flutter_phoenix.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:holool_ecommerce/core/app_observer/navigator_observer.dart';
-import 'package:holool_ecommerce/core/app_observer/simple_bloc_observer.dart';
-import 'package:holool_ecommerce/core/keys/app_keys.dart';
-import 'package:holool_ecommerce/core/shared/local_network.dart';
-import 'package:holool_ecommerce/routes/routes.dart';
-import 'package:holool_ecommerce/src/features/unknown/screens/unknown_page.dart';
-import 'package:holool_ecommerce/theme/theme.dart';
+import "package:holool_ecommerce/exports/main_exports.dart";
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

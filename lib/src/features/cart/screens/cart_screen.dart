@@ -135,15 +135,15 @@ class CartScreen extends StatelessWidget {
                             ),
                             builder: (context, snapshot) {
                               if (!snapshot.hasData) {
-                                return const Text('جاري حساب المجموع...');
+                                return const Text('Calculating total ...',
+                                    style: TextStyle(
+                                        color: AppColors.primaryColor));
                               }
-
                               double totalPrice = 0;
                               for (var i = 0; i < snapshot.data!.length; i++) {
                                 totalPrice += snapshot.data![i].price *
                                     state.cart.products[i].quantity;
                               }
-
                               return Column(
                                 children: [
                                   Row(
@@ -151,16 +151,22 @@ class CartScreen extends StatelessWidget {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        'عدد المنتجات:',
+                                        'Number of products:',
                                         style: Theme.of(context)
                                             .textTheme
-                                            .bodyLarge,
+                                            .bodyLarge!
+                                            .copyWith(
+                                              color: AppColors.primaryColor,
+                                            ),
                                       ),
                                       Text(
                                         '${state.cart.products.length}',
                                         style: Theme.of(context)
                                             .textTheme
-                                            .titleMedium,
+                                            .titleMedium!
+                                            .copyWith(
+                                              color: AppColors.primaryColor,
+                                            ),
                                       ),
                                     ],
                                   ),
@@ -170,10 +176,13 @@ class CartScreen extends StatelessWidget {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                        'المجموع:',
+                                        'Total:',
                                         style: Theme.of(context)
                                             .textTheme
-                                            .titleLarge,
+                                            .titleLarge!
+                                            .copyWith(
+                                              color: AppColors.primaryColor,
+                                            ),
                                       ),
                                       Text(
                                         '\$${totalPrice.toStringAsFixed(2)}',
@@ -207,7 +216,7 @@ class CartScreen extends StatelessWidget {
                                       defaultBorderRadious),
                                 ),
                               ),
-                              child: const Text('متابعة الدفع'),
+                              child: const Text('Proceed payment'),
                             ),
                           ),
                         ],

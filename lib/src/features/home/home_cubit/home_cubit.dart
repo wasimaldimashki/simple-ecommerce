@@ -49,9 +49,6 @@ class HomeCubit extends Cubit<HomeState> {
   void changeScreen(int newScreenIndex) {
     currentScreenIndex = newScreenIndex;
 
-    // controller.animateToPage(newScreenIndex,
-    //     duration: const Duration(milliseconds: 500),
-    //     curve: Curves.easeInOutCirc);
     emit(NavigationChangeScreenState());
   }
 }
