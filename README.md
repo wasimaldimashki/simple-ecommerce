@@ -23,9 +23,7 @@ Holool Ecommerce is a simple Flutter-based e-commerce application that allows us
 ### Installation
 
 1. **Clone the repository**:
-
-   ```sh
-   git clone https://github.com/your-repo/holool_ecommerce.git
+   git clone https://github.com/wasimaldimashki/simple-ecommerce.git
    cd holool_ecommerce
 
 Install dependencies:
