@@ -17,15 +17,8 @@ class ApiInterceptors extends Interceptor {
   }
 
   @override
-  void onResponse(Response response, ResponseInterceptorHandler handler) {
-    // يمكنك إضافة معالجة خاصة للاستجابات هنا
-    return super.onResponse(response, handler);
-  }
-
-  @override
   void onError(DioException err, ErrorInterceptorHandler handler) async {
     if (err.response?.statusCode == 401) {
-      // التعامل مع حالة انتهاء صلاحية التوكن
       await _handleTokenExpiration(err, handler);
       return;
     }
@@ -34,9 +27,6 @@ class ApiInterceptors extends Interceptor {
 
   Future<void> _handleTokenExpiration(
       DioException err, ErrorInterceptorHandler handler) async {
-    // يمكنك إضافة منطق تجديد التوكن هنا
-    // مثال: محاولة تجديد التوكن وإعادة المحاولة
     await CashNetwork.clearCash();
-    // يمكنك إضافة توجيه المستخدم إلى صفحة تسجيل الدخول
   }
 }

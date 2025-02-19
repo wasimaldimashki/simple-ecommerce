@@ -19,22 +19,23 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-        ensureScreenSize: true,
-        designSize: const Size(375, 812),
-        minTextAdapt: true,
-        splitScreenMode: true,
-        builder: (context, child) {
-          return MaterialApp(
-            debugShowCheckedModeBanner: false,
-            title: 'Simple E-commerce',
-            initialRoute: '/',
-            routes: routes,
-            onUnknownRoute: (routeName) =>
-                MaterialPageRoute(builder: (context) => UnknownPage()),
-            navigatorObservers: [MyNavigatorObserver()],
-            navigatorKey: AppKeys.navigatorKey,
-            theme: themeData,
-          );
-        });
+      ensureScreenSize: true,
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Simple E-commerce',
+          initialRoute: '/',
+          routes: routes,
+          onUnknownRoute: (routeName) =>
+              MaterialPageRoute(builder: (context) => UnknownPage()),
+          navigatorObservers: [MyNavigatorObserver()],
+          navigatorKey: AppKeys.navigatorKey,
+          theme: themeData,
+        );
+      },
+    );
   }
 }

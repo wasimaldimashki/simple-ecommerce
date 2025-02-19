@@ -35,6 +35,5 @@ class AppColors {
   // Shimmer Colors
   static const Color shimmerBaseColor = Color(0xFFE0E0E0);
   static const Color shimmerHighlightColor = Color(0xFFF5F5F5);
-
   static const gray = Color.fromARGB(255, 224, 224, 224);
 }
